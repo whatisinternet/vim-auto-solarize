@@ -6,21 +6,22 @@ toggling background.
 
 ## Features
 
-- 07:00 < time < 18:50 - sets background to light (solarized-light)
-- 18:50 < time < 07:00 - sets background to dark (solarized-dark)
+- 07:00 < time < 18:50 - sets theme to solarized-light
+- Other times theme is set to solarized-dark
 - `F8` key toggles background from light to dark
-- Automatic theme switch upon file save
+- AutoSolarize during file save (based on time of the day)
 
 **The times and hotkeys are configurable** (see
 [Configuration](#Configuration) for more information).
 
-## Dependencies
+## Requirements
 
-This relies on [Solarized
-VIM](http://ethanschoonover.com/solarized/vim-colors-solarized). See
-[Intallation](#Installation) for more information.
+This plugin relied on
+[vim-colors-solarized](http://ethanschoonover.com/solarized/vim-colors-solarized)
+installed. See [Setup](#Setup) section for information on how to install it
+together with this plugin.
 
-## Installation
+## Setup
 
 Using [Vundle](https://github.com/gmarik/Vundle.vim) is recommended way.
 Update your `.vimrc`:
@@ -30,11 +31,12 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'edvinasme/vim-auto-solarize'
 ```
 
-After editing `.vimrc` run `:BundleInstall`.
+After editing `.vimrc`, restart vim and run `:BundleInstall`.
 
 ## Configuration
 
 Configuration options for the plugin that can be set in `.vimrc`:
+
 - **g:auto_solarize_start_light** (Default: *'0700'*) - controls the time when
   light background will be activated. Format is HHMM (HH - hours (0-23); MM-
   minutes (0-59)). To disable, set to `2400`. Example:
@@ -43,6 +45,10 @@ Configuration options for the plugin that can be set in `.vimrc`:
    let g:auto_solarize_start_light = '0700'
    ```
 
+   You can set the time to any value, even higher than
+   `g:auto_solarize_start_dark`. Plugin is smart enough to work correctly with
+   different time configurations.
+
 - **g:auto_solarize_start_dark** (Default: *'1850'*) - controls the time when
   dark background will be activated. Format is HHMM (HH - hours (0-23); MM-
   minutes (0-59)). To disable, set to `2400`. Example:
@@ -50,6 +56,11 @@ Configuration options for the plugin that can be set in `.vimrc`:
      ```vim
     let g:auto_solarize_start_dark = '1850'
     ```
+
+   You can set the time to any value, even lower than
+   `g:auto_solarize_start_light`. Plugin is smart enough to work correctly with
+   different time configurations.
+
 
 - **g:auto_solarize_togglebg_key** (Default: *'<F8>'*) - allows you to change
   key for toggling background between light and dark. Example:

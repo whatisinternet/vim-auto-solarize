@@ -2,7 +2,7 @@
 " Maintainer Edvinas Klovas <edvinas@pnd.io>
 " Author Josh Teeter <joshteeter@gmail.com>
 
-" Set global configuration variables if there are not customized
+" Set defaults for unset configuration variables for the plugin
 if !exists("g:auto_solarize_start_dark")
     let g:auto_solarize_start_dark = '1850'
 endif
@@ -16,16 +16,27 @@ if !exists("g:auto_solarize_check_on_save")
     let g:auto_solarize_check_on_save = 1
 endif
 
+
 function! AutoSolarize()"{
   let current_time = strftime("%H%M")
   let start_light = g:auto_solarize_start_light
   let start_dark = g:auto_solarize_start_dark
 
-
-  if current_time >= start_light && current_time < start_dark
-    set background=light
-  elseif current_time >= start_dark
-    set background=dark
+  " comparison operations are according to which start time is later
+  if start_light < start_dark
+    " compare against start_light first, as it is lower
+    if current_time >= start_light && current_time < start_dark
+      set background=light
+    else
+      set background=dark
+    endif
+  else
+    " compare against start_dark first, as it is lower
+    if current_time >= start_dark && current_time < start_light
+        set background=dark
+    else
+        set background=light
+    endif
   endif
   colorscheme solarized
 endfunction"}
