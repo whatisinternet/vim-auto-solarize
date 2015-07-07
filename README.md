@@ -58,6 +58,15 @@ Configuration options for the plugin that can be set in `.vimrc`:
     let g:auto_solarize_togglebg_key = '<F8>'
     ```
 
+- **g:auto_solarize_check_on_save** (Default: *1*) - allows you to control
+  if AutoSolarize checks should be applied upon file save. Set to *0* to
+  disable. Example:
+
+    ```vim
+    let g:auto_solarize_check_on_save = 0
+    ```
+
+
 ## LICENSE
 
 Copyright for portions of vim-auto-solarize are held by:
