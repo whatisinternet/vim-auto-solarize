@@ -8,7 +8,7 @@ toggling background.
 
 - 07:00 < time < 18:50 - sets background to light (solarized-light)
 - 18:50 < time < 07:00 - sets background to dark (solarized-dark)
-- <F8> key toggles background from light to dark
+- `F8` key toggles background from light to dark
 - Automatic theme switch upon file save
 
 **The times and hotkeys are configurable** (see
