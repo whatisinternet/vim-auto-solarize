@@ -1,22 +1,25 @@
 # vim-auto-solarize
 
-This will change your vim colour scheme to either solarized dark or light
-depending on the time of day. It will additionally set a hotkey for
-toggling background.
+This will change your vim colour scheme to either
+[Solarized(https://github.com/edvinasme/vim-auto-solarize) dark or light
+depending on the (configured) time of day. It will additionally set a hotkey
+for toggling background on the fly.
 
 ## Features
 
+All of the features are configurable:
 - 07:00 < time < 18:50 - sets theme to solarized-light
 - Other times theme is set to solarized-dark
 - `F8` key toggles background from light to dark
-- AutoSolarize during file save (based on time of the day)
+- Calls AutoSolarize() during file save (based on time of the day). To call
+  this function manually use `:call AutoSolarize()` command.
 
 **The times and hotkeys are configurable** (see
 [Configuration](#Configuration) for more information).
 
 ## Requirements
 
-This plugin relied on
+This plugin relies on
 [vim-colors-solarized](http://ethanschoonover.com/solarized/vim-colors-solarized)
 installed. See [Setup](#Setup) section for information on how to install it
 together with this plugin.

@@ -1,6 +1,7 @@
 " vim-auto-solarize
-" Maintainer Edvinas Klovas <edvinas@pnd.io>
-" Author Josh Teeter <joshteeter@gmail.com>
+" author: Edvinas Klovas <edvinas@pnd.io> 2015
+" link: https://github.com/edvinasme/vim-auto-solarize
+" license: MIT
 
 " Set defaults for unset configuration variables for the plugin
 if !exists("g:auto_solarize_start_dark")
