@@ -4,7 +4,7 @@ Copyright for portions of vim-auto-solarize are held by:
 - Copyright (c) 2015 Edvinas Klovas <edvinas@pnd.io>
   For all portions of the code that are not from autoSolarize (see below).
 - Copyright (c) 2015 Josh Teeter <joshteeter@gmail.com>
-  For autoSolarize code: www.vim.org/scripts/script.php?script_id=5210
+  For autoSolarize code: https://github.com/whatisinternet/autoSolarize
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
