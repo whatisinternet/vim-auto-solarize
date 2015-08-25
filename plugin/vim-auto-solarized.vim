@@ -19,27 +19,32 @@ endif
 
 
 function! AutoSolarize()"{
-  let current_time = strftime("%H%M")
+
   let start_light = g:auto_solarize_start_light
   let start_dark = g:auto_solarize_start_dark
 
   " comparison operations are according to which start time is later
-  if start_light < start_dark
-    " compare against start_light first, as it is lower
-    if current_time >= start_light && current_time < start_dark
-      set background=light
-    else
-      set background=dark
-    endif
-  else
-    " compare against start_dark first, as it is lower
-    if current_time >= start_dark && current_time < start_light
-        set background=dark
-    else
-        set background=light
-    endif
+  if start_light > start_dark
+    let inversed_start_light = start_dark
+    let start_dark = start_light
+    let start_light = inversed_start_light
   endif
+
+  call SetBackground(start_dark, start_light)
+
   colorscheme solarized
+
+endfunction"}
+
+function! SetBackground(start_dark, start_light)"{
+  let current_time = strftime("%H%M")
+
+  if current_time >= a:start_light && current_time < a:start_dark
+    set background=light
+  else
+    set background=dark
+  endif
+
 endfunction"}
 
 " auto_solarize

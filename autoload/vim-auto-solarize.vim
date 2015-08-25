@@ -9,5 +9,5 @@ endif
 let g:loaded_auto_solarize_autoload = 1
 
 function! AutoSolarize#version()
-  return '0.9.2'
+  return '0.9.3'
 endfunction
