@@ -19,7 +19,6 @@ endif
 
 
 function! AutoSolarize()"{
-  colorscheme solarized
 
   let start_light = g:auto_solarize_start_light
   let start_dark = g:auto_solarize_start_dark
