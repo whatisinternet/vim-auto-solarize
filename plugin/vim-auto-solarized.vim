@@ -19,6 +19,7 @@ endif
 
 
 function! AutoSolarize()"{
+  colorscheme solarized
 
   let start_light = g:auto_solarize_start_light
   let start_dark = g:auto_solarize_start_dark
@@ -31,8 +32,6 @@ function! AutoSolarize()"{
   endif
 
   call SetBackground(start_dark, start_light)
-
-  colorscheme solarized
 
 endfunction"}
 
@@ -55,5 +54,5 @@ call togglebg#map(g:auto_solarize_togglebg_key)
 
 " make sure to AutoSolarize during save
 if g:auto_solarize_check_on_save == 1 && has('autocmd')
-    autocmd bufwritepost * call AutoSolarize()
+    autocmd bufwritepost * nested call AutoSolarize()
 endif
