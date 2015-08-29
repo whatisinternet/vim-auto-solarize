@@ -54,5 +54,5 @@ call togglebg#map(g:auto_solarize_togglebg_key)
 
 " make sure to AutoSolarize during save
 if g:auto_solarize_check_on_save == 1 && has('autocmd')
-    autocmd bufwritepost * call AutoSolarize()
+    autocmd bufwritepost * nested call AutoSolarize()
 endif
